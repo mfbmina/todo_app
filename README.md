@@ -20,16 +20,16 @@ Algumas exigências dos usuários muito empolgados com o sistema:
 
 Faça o código exatamente como faria no dia-a-dia de trabalho. Não precisa inventar algo para impressionar : ) Só faça com o que está confortável.
 
-* Ruby version
+# Ruby version
 2.4.0
 
-* System dependencies
-Gems listed on Gemfile
+# System dependencies
+* Gems listed on Gemfile
+* Selenium
+* Chromedriver (if you are using Mac OS ```brew install chromedriver```)
 
-* Configuration
-
-* Database creation and initialization
+# Database creation and initialization
 ``` rails db:create db:migrate ```
 
-* How to run the test suite
-``` rspec spec ```
+# How to run the test suite
+``` rspec ```
