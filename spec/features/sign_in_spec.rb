@@ -6,7 +6,7 @@ describe 'the sign in process', type: :feature do
   it 'signs me in' do
     visit '/users/sign_in'
     within('form#new_user') do
-      fill_in 'Email', with: 'mfbmina@gmail.com'
+      fill_in 'Email', with: user.email
       fill_in 'Password', with: '12345678'
     end
 

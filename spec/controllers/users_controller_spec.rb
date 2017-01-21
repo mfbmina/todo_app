@@ -18,12 +18,12 @@ describe UsersController, type: :controller do
   end
 
   describe 'GET show' do
-    it 'should render the show' do
+    it 'should render the template' do
       get :show, params: { id: user.id }
       expect(response).to render_template('show')
     end
 
-    it 'should assigns @users' do
+    it 'should assigns @user' do
       get :show, params: { id: user.id }
       expect(assigns(:user)).to eq(user)
     end
