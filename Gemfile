@@ -51,6 +51,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'rails-controller-testing'
   gem 'faker'
+  gem 'database_cleaner'
 end
 
 group :development do
