@@ -10,6 +10,8 @@ class TodoListsController < ApplicationController
 
   def new
     @todo_list = TodoList.new
+    @todo_list.tasks.build
+    @todo_list
   end
 
   def edit
@@ -45,6 +47,6 @@ class TodoListsController < ApplicationController
   end
 
   def todo_list_params
-    params.require(:todo_list).permit(:name)
+    params.require(:todo_list).permit(:name, tasks_attributes: [:id, :description, :_destroy])
   end
 end

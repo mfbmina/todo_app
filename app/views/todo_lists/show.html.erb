@@ -7,3 +7,27 @@
 
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
 <%= link_to 'Back', todo_lists_path %>
+
+<hr>
+
+<h1>Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Closed</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todo_list.tasks.each do |task| %>
+      <tr>
+        <td><%= task.description %></td>
+        <td><%= task.done %></td>
+        <td><%= link_to 'Close', '#', unless: task.done? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
