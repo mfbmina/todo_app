@@ -25,8 +25,10 @@
     <% @todo_list.tasks.each do |task| %>
       <tr>
         <td><%= task.description %></td>
-        <td><%= task.done %></td>
-        <td><%= link_to 'Close', '#', unless: task.done? %></td>
+        <td><%= task.closed %></td>
+        <td>
+          <%= link_to 'Close', '#', class: 'close_task', data: { id: task.id } unless task.closed? %>
+        </td>
       </tr>
     <% end %>
   </tbody>
