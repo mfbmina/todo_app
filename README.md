@@ -33,7 +33,16 @@ Faça o código exatamente como faria no dia-a-dia de trabalho. Não precisa inv
 * Chromedriver (if you are using Mac OS ```brew install chromedriver```)
 
 # Database creation and initialization
+First of all, clone the repo
+``` git clone git@bitbucket.org:mfbmina/worldpackers.git ```
+
+Then, config your database at `config/database.yml` and run:
+
 ``` rails db:create db:migrate ```
+
+And finally:
+
+``` rails s ```
 
 # Running specs
 ``` rspec ```
