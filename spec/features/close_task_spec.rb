@@ -12,7 +12,7 @@ describe 'the closing task process process', type: :feature, js: true do
     end
     expect(page).to have_content 'false'
     click_link_or_button 'Close'
-    page.evaluate_script("window.location.reload()")
     expect(page).to have_content 'true'
+    expect(page).to have_content find(".close_task", visible: false).value
   end
 end

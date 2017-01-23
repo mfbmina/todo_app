@@ -19,8 +19,8 @@
         <td><%= task.id %></td>
         <td><%= task.description %></td>
         <td><%= task.closed %></td>
-        <td><%= task.closed? ? (l task.closed_at) : '' %></td>
-        <td><%=l task.created_at %></td>
+        <td><%= parse_date task.closed_at %></td>
+        <td><%= parse_date task.created_at %></td>
         <td>
           <%= link_to 'Close', '#', data: { id: task.id }, class: 'close_task btn btn-default btn-xs' unless task.closed? %>
         </td>
