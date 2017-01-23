@@ -16,7 +16,7 @@ describe 'the users crud process', type: :feature do
   it 'can visit users show page' do
     visit '/users'
     within('table') do
-      click_link 'Show'
+      click_link_or_button 'Show'
     end
     expect(page).to have_content user.name
     expect(page).to have_content user.email

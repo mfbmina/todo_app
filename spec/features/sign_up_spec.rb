@@ -10,7 +10,7 @@ describe 'the sign up process', type: :feature do
       fill_in 'Password confirmation', with: '12345678'
     end
 
-    click_button 'Sign up'
+    click_link_or_button 'Sign up'
     expect(page).to have_content 'You have signed up successfully.'
   end
 end

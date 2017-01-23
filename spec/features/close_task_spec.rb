@@ -8,10 +8,10 @@ describe 'the closing task process process', type: :feature, js: true do
   it 'closes the task' do
     visit '/todo_lists'
     within('table') do
-      click_link 'Show'
+      click_link_or_button 'Show'
     end
     expect(page).to have_content 'false'
-    click_link 'Close'
+    click_link_or_button 'Close'
     page.evaluate_script("window.location.reload()")
     expect(page).to have_content 'true'
   end

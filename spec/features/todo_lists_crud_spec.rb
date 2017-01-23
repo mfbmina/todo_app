@@ -12,7 +12,7 @@ describe 'viewing todo lists', type: :feature do
     within('table') do
       expect(page).to have_content todo_list.name
       expect(page).to_not have_content todo_list2.name
-      click_link 'Show'
+      click_link_or_button 'Show'
     end
     expect(page).to have_content todo_list.name
     expect(page).to_not have_content todo_list2.name
@@ -26,13 +26,13 @@ describe 'creating a todo list', type: :feature, js: true do
 
   it 'creates a new todo list and tasks' do
     visit '/todo_lists'
-    click_link 'New Todo List'
+    click_link_or_button 'New'
     fill_in 'Name', with: 'example list'
-    click_link 'add task'
+    click_link_or_button 'Add task'
     all("input[id$='_description']").each_with_index do |e, i|
       e.set "task #{i + 1}"
     end
-    click_button 'Create Todo list'
+    click_link_or_button 'Create Todo list'
     expect(page).to have_content 'Todo list was successfully created.'
     expect(page).to have_content 'task 1'
     expect(page).to have_content 'task 2'
@@ -40,8 +40,8 @@ describe 'creating a todo list', type: :feature, js: true do
 
   it 'stays on new page when not filled correctly' do
     visit '/todo_lists'
-    click_link 'New Todo List'
-    click_button 'Create Todo list'
+    click_link_or_button 'New'
+    click_link_or_button 'Create Todo list'
     expect(page).to_not have_content 'Todo list was successfully created.'
   end
 end
@@ -58,11 +58,11 @@ describe 'editing a todo list', type: :feature, js: true do
   it "edits a todo list and its tasks" do
     visit '/todo_lists'
     within('table') do
-      click_link 'Edit'
+      click_link_or_button 'Edit'
     end
     fill_in 'Name', with: 'example list'
     fill_in 'todo_list_tasks_attributes_0_description', with: 'task 2'
-    click_button 'Update Todo list'
+    click_link_or_button 'Update Todo list'
     expect(page).to have_content 'Todo list was successfully updated.'
     expect(page).to_not have_content 'task 1'
     expect(page).to have_content 'task 2'
@@ -71,11 +71,11 @@ describe 'editing a todo list', type: :feature, js: true do
   it "can remove tasks" do
     visit '/todo_lists'
     within('table') do
-      click_link 'Edit'
+      click_link_or_button 'Edit'
     end
     fill_in 'Name', with: 'example list'
-    click_link 'remove task'
-    click_button 'Update Todo list'
+    click_link_or_button 'Remove'
+    click_link_or_button 'Update Todo list'
     expect(page).to have_content 'Todo list was successfully updated.'
     expect(page).to_not have_content 'task 1'
   end
@@ -83,10 +83,10 @@ describe 'editing a todo list', type: :feature, js: true do
   it "stays on edit page when not filled correctly" do
     visit '/todo_lists'
     within('table') do
-      click_link 'Edit'
+      click_link_or_button 'Edit'
     end
     fill_in 'Name', with: ''
-    click_button 'Update Todo list'
+    click_link_or_button 'Update Todo list'
     expect(page).to_not have_content 'Todo list was successfully updated.'
   end
 end
@@ -100,7 +100,7 @@ describe 'destroying a todo list', type: :feature, js: true do
   it "destroys a todo list" do
     visit '/todo_lists'
     within('table') do
-      page.accept_confirm { click_link "Destroy" }
+      page.accept_confirm { click_link_or_button "Delete" }
     end
     expect(page).to have_content 'Todo list was successfully destroyed.'
   end

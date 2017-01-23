@@ -24,6 +24,7 @@ Faça o código exatamente como faria no dia-a-dia de trabalho. Não precisa inv
 2.4.0
 
 # System dependencies
+* Ruby 2.4.0
 * Gems listed on Gemfile
 * Selenium
 * Chromedriver (if you are using Mac OS ```brew install chromedriver```)
@@ -31,5 +32,11 @@ Faça o código exatamente como faria no dia-a-dia de trabalho. Não precisa inv
 # Database creation and initialization
 ``` rails db:create db:migrate ```
 
-# How to run the test suite
+# Running specs
 ``` rspec ```
+
+# Exporting tracking system
+``` rails export:tracks:task_closed ```
+
+If you wanna specify the path use:
+``` rails export:tracks:task_closed FILENAME=/path/to/file.csv  ```

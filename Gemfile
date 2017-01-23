@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'cocoon'
+gem "twitter-bootstrap-rails"
 
 group :development, :test do
   gem 'pry'
