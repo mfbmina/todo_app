@@ -10,8 +10,8 @@ describe 'the sign out process', type: :feature do
       fill_in 'Password', with: '12345678'
     end
 
-    click_link_or_button 'Log in'
-    click_link_or_button 'Logout'
-    expect(page).to have_content 'Log in'
+    click_link_or_button 'Sign in'
+    click_link_or_button 'Sign out'
+    expect(page).to have_content 'Sign in'
   end
 end

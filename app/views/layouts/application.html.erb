@@ -28,9 +28,11 @@
         <a class="navbar-brand" href="#">Worldpackers</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Users", users_path %></li>
-            <li><%= link_to "My todo Lists", todo_lists_path %></li>
-            <li><%= link_to('Logout', destroy_user_session_path, method: :delete) if current_user %></li>
+            <% if current_user %>
+              <li><%= link_to "Users", users_path %></li>
+              <li><%= link_to "My todo Lists", todo_lists_path %></li>
+              <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
+            <% end %>
           </ul>
         </div>
       </div>

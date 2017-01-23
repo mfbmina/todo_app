@@ -10,7 +10,7 @@ describe 'the sign in process', type: :feature do
       fill_in 'Password', with: '12345678'
     end
 
-    click_link_or_button 'Log in'
+    click_link_or_button 'Sign in'
     expect(page).to have_content 'Signed in successfully.'
   end
 end
