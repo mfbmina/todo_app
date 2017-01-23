@@ -33,5 +33,9 @@ describe CloseTask do
     it 'should sent an email' do
       expect { CloseTask.call(task) }.to change { ActionMailer::Base.deliveries.count }.by(1)
     end
+
+    it 'should sent an email' do
+      expect { CloseTask.call(task) }.to change { Track.count }.by(1)
+    end
   end
 end
