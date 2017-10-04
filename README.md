@@ -1,27 +1,29 @@
-# App Rails de To Do
+# To Do Rails App
 
-Nesse to-do list é possível:
+This is a To Do app, implemented as a test for a job.
 
-* Registrar um usuário / logar (só precisa de um nome, email e senha)
-* Adicionar uma tarefa (que é simplesmente um campo de texto)
-* Editar uma tarefa
-* Remover uma tarefa
-* Marcar uma tarefa como completa
+# Problem
 
-Quando um usuário marcar uma tarefa como completa:
+In this to-do list you can:
 
-* O sistema manda um email para o usuário com uma bela frase aleatória de "Parabéns" (inventa qualquer 5 frases aleatórias) pintada de uma cor hexadecimal aleatória também (inventa 5 e pega uma aleatoriamente)
+* Register a user / login (just need a name, email and password)
+* Add a task (which is simply a text field)
+* Edit a task
+* Remove a task
+* Mark a task as complete
 
-* Além disso, também tem que enviar um evento para o sistema de tracking. Por simplicidade, o sistema de tracking é só uma tabelinha de eventos que tem um tipo de evento e um campo json em que você manda dados relevantes. No caso, guardar nesse campo json a cor e a frase aleatória do email de "Parabéns".
+When a user marks a task as complete:
 
-Algumas exigências dos usuários muito empolgados com o sistema:
+* The system sends an email to the user with a nice random phrase of "Congratulations" painted a random hexadecimal color
 
-* Pelo menos a operação de marcar a tarefa como completa deve ser assíncrona.
-* Usar o bootstrap para o CSS
-* Fazer deploy no Heroku
-* Criar uma rake task que extrai um relatório CSV de todos os eventos com: usuário, cor hexadecimal, frase e a hora que foi marcada como completa (não vale simplesmente imprimir attributes ou o json. tem que ser cada um separado).
+* In addition, you also have to send an event to the tracking system. For simplicity, the tracking system is just an event table that has an event type and a json field in which you send relevant data. In case, saving in this field json the color and the random phrase of the "Congratulations" email.
 
-Faça o código exatamente como faria no dia-a-dia de trabalho. Não precisa inventar algo para impressionar : ) Só faça com o que está confortável.
+Some requirements of users very excited about the system:
+
+* At least the operation to mark the task as complete must be asynchronous.
+* Use the bootstrap for CSS
+* Deploy in Heroku
+* Create a rake task that extracts a CSV report from all events with: user, hexadecimal color, phrase and the time that was marked as complete (not just print attributes or json.
 
 # Ruby version
 2.4.0
@@ -34,7 +36,7 @@ Faça o código exatamente como faria no dia-a-dia de trabalho. Não precisa inv
 
 # Database creation and initialization
 First of all, clone the repo
-``` git clone git@bitbucket.org:mfbmina/worldpackers.git ```
+``` git clone REPO_URL ```
 
 Then, config your database at `config/database.yml` and run:
 
